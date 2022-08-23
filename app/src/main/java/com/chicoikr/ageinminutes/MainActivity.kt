@@ -13,6 +13,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     var tvSelectedDate : TextView? = null
+    var result : TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnDatePicker : Button = findViewById(R.id.button)
         tvSelectedDate = findViewById(R.id.textView2)
+        result = findViewById(R.id.textView3)
 
         btnDatePicker.setOnClickListener {
             asClicked()
@@ -45,6 +47,16 @@ class MainActivity : AppCompatActivity() {
             val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
 
             val theDate = sdf.parse(selectedDate)
+
+            val selectedDateInMinutes = theDate.time / 60000
+
+            val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+
+            val currentDateInMinutes = currentDate.time/ 60000
+
+            val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
+
+            result?.text = "$differenceInMinutes"
 
 
             },
