@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="74dp"
         android:backgroundTint="@color/teal_700"
-        android:text="@string/select_your_age"
+        android:text="@string/select_your_bd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
